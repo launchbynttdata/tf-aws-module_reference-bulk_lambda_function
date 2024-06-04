@@ -11,7 +11,7 @@
 // limitations under the License.
 
 module "lambda_function" {
-  source   = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git?ref=minor/add-var"
+  source   = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git?ref=1.0.1"
   for_each = var.bulk_lambda_functions
 
   name                               = each.value.name

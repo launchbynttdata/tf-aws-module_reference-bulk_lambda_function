@@ -119,7 +119,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_lambda_function"></a> [lambda\_function](#module\_lambda\_function) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git | minor/add-var |
+| <a name="module_lambda_function"></a> [lambda\_function](#module\_lambda\_function) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git | 1.0.1 |
 
 ## Resources
 

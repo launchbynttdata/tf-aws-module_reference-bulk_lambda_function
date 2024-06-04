@@ -3,7 +3,6 @@ bulk_lambda_functions = {
     name           = "test_lambda_fn-1"
     create_package = true
     source_path    = "test_lambda_fn-1"
-    hash_extra     = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
     cors = {
       allow_credentials = true
       allow_origins     = ["*"]
