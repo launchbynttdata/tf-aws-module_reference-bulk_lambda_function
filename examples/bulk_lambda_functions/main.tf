@@ -13,5 +13,13 @@
 module "bulk_lambda_functions" {
   source = "../.."
 
-  bulk_lambda_functions = var.bulk_lambda_functions
+  bulk_lambda_functions   = var.bulk_lambda_functions
+  environment             = var.environment
+  environment_number      = var.environment_number
+  region                  = var.region
+  resource_number         = var.resource_number
+  logical_product_family  = var.logical_product_family
+  logical_product_service = var.logical_product_service
+  resource_names_map      = var.resource_names_map
+
 }

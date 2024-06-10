@@ -14,7 +14,7 @@ module "lambda_function" {
   source   = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git?ref=1.0.1"
   for_each = var.bulk_lambda_functions
 
-  name                               = each.value.name
+  name                               = module.resource_names["function"].standard
   description                        = each.value.description
   handler                            = each.value.handler
   runtime                            = each.value.runtime
@@ -67,6 +67,23 @@ module "lambda_function" {
   vpc_subnet_ids                     = each.value.vpc_subnet_ids
   lambda_at_edge                     = each.value.lambda_at_edge
   lambda_at_edge_logs_all_regions    = each.value.lambda_at_edge_logs_all_regions
-  tags                               = each.value.tags
+  tags                               = merge(each.value.tags, { resource_name = module.resource_names["function"].standard })
   create                             = each.value.create
+}
+
+
+module "resource_names" {
+  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.1"
+
+  for_each = var.resource_names_map
+
+  logical_product_family  = var.logical_product_family
+  logical_product_service = var.logical_product_service
+
+  region              = join("", split("-", var.region))
+  class_env           = var.environment
+  cloud_resource_type = each.value.name
+  instance_env        = var.environment_number
+  instance_resource   = var.resource_number
+  maximum_length      = each.value.max_length
 }

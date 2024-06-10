@@ -29,3 +29,15 @@ bulk_lambda_functions = {
     hash_extra = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
   }
 }
+environment             = "demo"
+environment_number      = "000"
+region                  = "us-east-1"
+resource_number         = "000"
+logical_product_family  = "launch"
+logical_product_service = "lambda"
+resource_names_map = {
+  function = {
+    name       = "function"
+    max_length = 64
+  }
+}
