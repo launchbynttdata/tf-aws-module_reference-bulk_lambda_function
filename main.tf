@@ -67,7 +67,7 @@ module "lambda_function" {
   vpc_subnet_ids                     = each.value.vpc_subnet_ids
   lambda_at_edge                     = each.value.lambda_at_edge
   lambda_at_edge_logs_all_regions    = each.value.lambda_at_edge_logs_all_regions
-  tags                               = merge(each.value.tags, { resource_name = module.resource_names["function"].standard })
+  tags                               = merge(each.value.tags, { resource_name = "${module.resource_names["function"].standard}_${each.value.name}" })
   create                             = each.value.create
 }
 
