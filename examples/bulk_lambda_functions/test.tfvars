@@ -11,6 +11,7 @@ bulk_lambda_functions = {
       expose_headers    = ["keep-alive", "date"]
       max_age           = 86400
     }
+    hash_extra = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
   },
   "test_lambda_fn-2" = {
     name           = "test_lambda_fn-2"
@@ -25,5 +26,6 @@ bulk_lambda_functions = {
       expose_headers    = ["keep-alive", "date"]
       max_age           = 86400
     }
+    hash_extra = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
   }
 }
