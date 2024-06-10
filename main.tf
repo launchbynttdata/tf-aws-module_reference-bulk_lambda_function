@@ -44,6 +44,7 @@ module "lambda_function" {
   policy                             = each.value.policy
   attach_policies                    = each.value.attach_policies
   policies                           = each.value.policies
+  policy_json                        = each.value.policy_json
   attach_policy_json                 = each.value.attach_policy_json
   policy_jsons                       = each.value.policy_jsons
   attach_policy_jsons                = each.value.attach_policy_jsons
