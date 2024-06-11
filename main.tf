@@ -83,7 +83,7 @@ module "resource_names" {
   region              = join("", split("-", var.region))
   class_env           = var.environment
   cloud_resource_type = each.value.name
-  instance_env        = var.environment_number
-  instance_resource   = var.resource_number
+  instance_env        = var.instance_env
+  instance_resource   = var.instance_resource
   maximum_length      = each.value.max_length
 }

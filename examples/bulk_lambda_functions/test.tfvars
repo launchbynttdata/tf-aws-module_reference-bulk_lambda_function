@@ -30,9 +30,9 @@ bulk_lambda_functions = {
   }
 }
 environment             = "demo"
-environment_number      = "000"
+instance_env            = 0
 region                  = "us-east-1"
-resource_number         = "000"
+instance_resource       = 0
 logical_product_family  = "launch"
 logical_product_service = "lambda"
 resource_names_map = {
