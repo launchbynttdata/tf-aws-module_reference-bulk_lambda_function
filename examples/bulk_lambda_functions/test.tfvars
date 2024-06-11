@@ -11,6 +11,7 @@ bulk_lambda_functions = {
       expose_headers    = ["keep-alive", "date"]
       max_age           = 86400
     }
+    hash_extra = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
   },
   "test_lambda_fn-2" = {
     name           = "test_lambda_fn-2"
@@ -25,5 +26,18 @@ bulk_lambda_functions = {
       expose_headers    = ["keep-alive", "date"]
       max_age           = 86400
     }
+    hash_extra = "." # Seems to resolve a provider error. You can supply whatever value as long as there's a value supplied.
+  }
+}
+environment             = "demo"
+instance_env            = 0
+region                  = "us-east-1"
+instance_resource       = 0
+logical_product_family  = "launch"
+logical_product_service = "lambda"
+resource_names_map = {
+  function = {
+    name       = "function"
+    max_length = 64
   }
 }
