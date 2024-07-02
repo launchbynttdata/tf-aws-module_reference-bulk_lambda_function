@@ -11,7 +11,8 @@
 // limitations under the License.
 
 module "lambda_function" {
-  source   = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-lambda_function.git?ref=1.0.1"
+  source   = "terraform.registry.launch.nttdata.com/module_primitive/lambda_function/aws"
+  version  = "~> 1.0"
   for_each = var.bulk_lambda_functions
 
   name                               = "${module.resource_names["function"].standard}_${each.value.name}"
@@ -73,7 +74,8 @@ module "lambda_function" {
 
 
 module "resource_names" {
-  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.1"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
+  version = "~> 1.0"
 
   for_each = var.resource_names_map
 
