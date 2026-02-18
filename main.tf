@@ -74,8 +74,7 @@ module "lambda_function" {
 
 
 module "resource_names" {
-  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
-  version = "~> 1.0"
+  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=fix/terraform-version"
 
   for_each = var.resource_names_map
 
