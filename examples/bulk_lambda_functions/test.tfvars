@@ -41,3 +41,7 @@ resource_names_map = {
     max_length = 64
   }
 }
+# Optional: override Lambda function names (keys match bulk_lambda_functions keys)
+lambda_function_name_overrides = {
+  "test_lambda_fn-1" = "my-custom-name-for-first"
+}

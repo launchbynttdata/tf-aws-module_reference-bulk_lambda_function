@@ -20,6 +20,7 @@ module "bulk_lambda_functions" {
   instance_env            = var.instance_env
   logical_product_family  = var.logical_product_family
   logical_product_service = var.logical_product_service
-  resource_names_map      = var.resource_names_map
+  resource_names_map                = var.resource_names_map
+  lambda_function_name_overrides    = var.lambda_function_name_overrides
 
 }

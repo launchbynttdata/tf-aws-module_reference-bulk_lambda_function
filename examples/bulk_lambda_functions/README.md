@@ -34,6 +34,7 @@ No resources.
 | <a name="input_logical_product_family"></a> [logical\_product\_family](#input\_logical\_product\_family) | (Required) Name of the product family for which the resource is created.<br>    Example: org\_name, department\_name. | `string` | n/a | yes |
 | <a name="input_logical_product_service"></a> [logical\_product\_service](#input\_logical\_product\_service) | (Required) Name of the product service for which the resource is created.<br>    For example, backend, frontend, middleware etc. | `string` | n/a | yes |
 | <a name="input_resource_names_map"></a> [resource\_names\_map](#input\_resource\_names\_map) | A map of key to resource\_name that will be used by tf-launch-module\_library-resource\_name to generate resource names | <pre>map(object(<br>    {<br>      name       = string<br>      max_length = optional(number, 60)<br>    }<br>  ))</pre> | <pre>{<br>  "function": {<br>    "max_length": 60,<br>    "name": "fn"<br>  }<br>}</pre> | no |
+| <a name="input_lambda_function_name_overrides"></a> [lambda\_function\_name\_overrides](#input\_lambda\_function\_name\_overrides) | Optional map of Lambda function keys to custom full names. When set, overrides the resource_names-generated name for that function. | `map(string)` | `{}` | no |
 
 ## Outputs
 
