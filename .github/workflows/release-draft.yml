@@ -2,8 +2,8 @@ name: Draft Release
 
 on:
   push:
-    branches:
-      - *
+    branches-ignore:
+      - main
 
 permissions:
   contents: read
