@@ -66,3 +66,4 @@ azure_env.sh
 
 # Ignore all build files
 examples/bulk_lambda_functions/builds
+.terraform
