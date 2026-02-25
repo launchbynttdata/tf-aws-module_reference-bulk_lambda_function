@@ -13,14 +13,14 @@
 module "bulk_lambda_functions" {
   source = "../.."
 
-  bulk_lambda_functions   = var.bulk_lambda_functions
-  environment             = var.environment
-  instance_resource       = var.instance_resource
-  region                  = var.region
-  instance_env            = var.instance_env
-  logical_product_family  = var.logical_product_family
-  logical_product_service = var.logical_product_service
-  resource_names_map                = var.resource_names_map
-  lambda_function_name_overrides    = var.lambda_function_name_overrides
+  bulk_lambda_functions          = var.bulk_lambda_functions
+  environment                    = var.environment
+  instance_resource              = var.instance_resource
+  region                         = var.region
+  instance_env                   = var.instance_env
+  logical_product_family         = var.logical_product_family
+  logical_product_service        = var.logical_product_service
+  resource_names_map             = var.resource_names_map
+  lambda_function_name_overrides = var.lambda_function_name_overrides
 
 }
