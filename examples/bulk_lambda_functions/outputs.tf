@@ -18,6 +18,11 @@ output "lambda_function_names" {
   value = module.bulk_lambda_functions.lambda_function_names
 }
 
+output "lambda_function_name_overrides" {
+  description = "Exposed for tests: when set, deployed Lambda names should match these overrides."
+  value       = var.lambda_function_name_overrides
+}
+
 output "lambda_cloudwatch_log_group_arns" {
   value = module.bulk_lambda_functions.lambda_cloudwatch_log_group_arns
 }

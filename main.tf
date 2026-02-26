@@ -15,7 +15,7 @@ module "lambda_function" {
   version  = "~> 1.0"
   for_each = var.bulk_lambda_functions
 
-  name                               = "${module.resource_names["function"].standard}_${each.value.name}"
+  name                               = try(var.lambda_function_name_overrides[each.key], "${module.resource_names["function"].standard}_${each.value.name}")
   description                        = each.value.description
   handler                            = each.value.handler
   runtime                            = each.value.runtime
@@ -68,14 +68,13 @@ module "lambda_function" {
   vpc_subnet_ids                     = each.value.vpc_subnet_ids
   lambda_at_edge                     = each.value.lambda_at_edge
   lambda_at_edge_logs_all_regions    = each.value.lambda_at_edge_logs_all_regions
-  tags                               = merge(each.value.tags, { resource_name = "${module.resource_names["function"].standard}_${each.value.name}" })
+  tags                               = merge(each.value.tags, { resource_name = try(var.lambda_function_name_overrides[each.key], "${module.resource_names["function"].standard}_${each.value.name}") })
   create                             = each.value.create
 }
 
 
 module "resource_names" {
-  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
-  version = "~> 1.0"
+  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=2.2.1"
 
   for_each = var.resource_names_map
 

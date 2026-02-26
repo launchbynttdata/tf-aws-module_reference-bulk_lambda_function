@@ -156,3 +156,9 @@ variable "resource_names_map" {
     }
   }
 }
+
+variable "lambda_function_name_overrides" {
+  description = "Optional map of Lambda function keys (matching bulk_lambda_functions keys) to custom full names. When a key is present, its value is used as the Lambda function name instead of the resource_names-generated name."
+  type        = map(string)
+  default     = {}
+}
