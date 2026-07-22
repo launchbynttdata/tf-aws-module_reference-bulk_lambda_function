@@ -12,7 +12,7 @@
 
 module "lambda_function" {
   source   = "terraform.registry.launch.nttdata.com/module_primitive/lambda_function/aws"
-  version  = "~> 1.0"
+  version  = "~> 2.0"
   for_each = var.bulk_lambda_functions
 
   name                               = try(var.lambda_function_name_overrides[each.key], "${module.resource_names["function"].standard}_${each.value.name}")
