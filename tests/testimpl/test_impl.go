@@ -18,8 +18,8 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	lambdaClient := GetAWSLambdaClient(t)
 	opts := ctx.TerratestTerraformOptions()
 
-	functionArns := terraform.OutputMap(t, opts, "lambda_function_arns")
-	functionNames := terraform.OutputMap(t, opts, "lambda_function_names")
+	functionArns := terraform.OutputMapContext(t, context.Background(), opts, "lambda_function_arns")
+	functionNames := terraform.OutputMapContext(t, context.Background(), opts, "lambda_function_names")
 	// functionNames are the actual Lambda names (from lambda_function_name_overrides when provided, else resource_names-generated)
 
 	t.Run("TestLambdaFunctionExists", func(t *testing.T) {
@@ -36,7 +36,7 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	})
 
 	t.Run("TestLambdaFunctionNameOverrides", func(t *testing.T) {
-		overrides := terraform.OutputMap(t, opts, "lambda_function_name_overrides")
+		overrides := terraform.OutputMapContext(t, context.Background(), opts, "lambda_function_name_overrides")
 		if len(overrides) == 0 {
 			t.Skip("lambda_function_name_overrides not set or empty; skipping override assertion")
 		}
